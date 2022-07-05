@@ -82,13 +82,13 @@ namespace algorytm2
             List<(int start, int end)> listAllLesson = new List<(int start, int end)>() { (30, 75), (0, 50), (60, 150) };
             List<(int start, int end)> listAllLesson2 = new List<(int start, int end)>() { (0, 75), (0, 35), (40, 90), (20, 70) };
             List<(int start, int end)> listAllLesson3 = new List<(int start, int end)>() { (0, 75), (0, 35), (40, 90), (20, 70), (37, 38), (36, 36) };
-            Console.WriteLine(CoutClassForLesson(listAllLesson));
-            Console.WriteLine(CoutClassForLesson(listAllLesson2));
-            Console.WriteLine(CoutClassForLesson(listAllLesson3));
+            Console.WriteLine(CountClassForLesson(listAllLesson));
+            Console.WriteLine(CountClassForLesson(listAllLesson2));
+            Console.WriteLine(CountClassForLesson(listAllLesson3));
 
         }
 
-        public static int CoutClassForLesson(List<(int start, int end)> lessons){
+        public static int CountClassForLesson(List<(int start, int end)> lessons){
             List<LessonInClass> classes = new List<LessonInClass>();
             var listAllLesson = lessons.OrderBy(p => p.start).OrderBy(p => p.end).ToList();
 
