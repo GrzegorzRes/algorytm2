@@ -11,7 +11,7 @@ namespace algorytm2
     public class LessonInClass
     {
         public List<Lesson> Lessons { get; set; } = new List<Lesson>();
-        public int CoutLessons { get; set; } = 0;
+        public int CountLessons { get; set; } = 0;
 
         public bool CheckCanAddLesson(Lesson lesson)
         {
@@ -36,7 +36,7 @@ namespace algorytm2
 
         private bool checkIsBetweenLesson(Lesson lesson)
         {
-            if(CoutLessons <= 1) 
+            if(CountLessons <= 1) 
             {
                 return false;
             }
@@ -56,7 +56,7 @@ namespace algorytm2
 
         private bool CheckIsLastLesson(Lesson lesson)
         {
-            if (lesson.Start > Lessons[CoutLessons-1].End)
+            if (lesson.Start > Lessons[CountLessons - 1].End)
             {
                 Lessons.Add(lesson);
                 return true;
@@ -102,7 +102,7 @@ namespace algorytm2
                 {
                     if (item.CheckCanAddLesson(lesson))
                     {
-                        item.CoutLessons++;
+                        item.CountLessons++;
                         isAddToList = true;
                         break;
                     }
@@ -112,7 +112,7 @@ namespace algorytm2
                 {
                     LessonInClass newClass = new LessonInClass();
                     newClass.Lessons.Add(lesson);
-                    newClass.CoutLessons++;
+                    newClass.CountLessons++;
                     classes.Add(newClass);
                 }
                 listAllLesson.RemoveAt(0);
